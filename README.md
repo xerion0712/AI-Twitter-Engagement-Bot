@@ -1,71 +1,59 @@
-# Twitter Bot
+# AI Twitter Engagement Bot
 
-This bot is an AI assistant that automatically responds to mentions and tweet replies on Twitter.
-## Contact
+A smart Twitter bot that automatically responds to mentions and tweet replies using OpenAI's GPT model. Designed for maintaining active engagement with your audience.
 
-[Telegram](https://t.me/m4rcu5sol)
+## Key Features
 
-## Features
+- **Smart AI Replies**: Generates contextual responses using OpenAI GPT-3.5
+- **Dual Engagement Modes**: Choose between mention responses or reply tracking
+- **Rate Limit Protection**: Built-in safeguards to avoid API limits
+- **Daily Usage Caps**: Prevent excessive API usage with configurable limits
+- **Comprehensive Logging**: Detailed activity tracking for monitoring
 
-- Automatic reply to mentions
-- Automatic reply to comments on tweets
-- Creating smart replies with OpenAI GPT-3.5
-- Rate limiting and daily tweet limit control
-- Detailed logging system
+## Quick Setup
 
-## Installation
-
-1. Install the required packages:
+1. **Install dependencies:**
 ```bash
 pip install -r requirements.txt
 ```
 
-2. Create the `.env` file and add the following variables:
+2. **Configure environment variables** in `.env`:
 ```
-TWITTER_API_KEY=your_api_key
-TWITTER_API_SECRET=your_api_secret
+TWITTER_API_KEY=your_twitter_api_key
+TWITTER_API_SECRET=your_twitter_api_secret
 TWITTER_ACCESS_TOKEN=your_access_token
 TWITTER_ACCESS_TOKEN_SECRET=your_access_token_secret
 TWITTER_BEARER_TOKEN=your_bearer_token
 OPENAI_API_KEY=your_openai_api_key
 ```
 
-## Usage
-
-To start the program:
+3. **Run the bot:**
 ```bash
 python main.py
 ```
 
-You can choose between two modes:
-1. Automatically respond to mentions
-2. Automatically respond to comments on tweets
-
-## Project Structure
+## Project Architecture
 
 ```
-.
-├── config/
-│   └── config.py         # Konfigürasyon ayarları
+├── config/              # Configuration management
 ├── src/
-│   ├── twitter_client.py # Twitter API işlemleri
-│   ├── openai_client.py  # OpenAI API işlemleri
-│   └── tweet_handler.py  # Tweet işleme mantığı
+│   ├── twitter_client.py    # Twitter API interactions
+│   ├── openai_client.py     # AI response generation
+│   └── tweet_handler.py     # Core tweet processing logic
 ├── utils/
-│   ├── logger.py        # Loglama sistemi
-│   └── rate_limiter.py  # Rate limiting işlemleri
-├── logs/                # Log dosyaları
-├── .env                 # Ortam değişkenleri
-├── main.py             # Ana program
-└── requirements.txt    # Gerekli paketler
+│   ├── logger.py           # Custom logging system
+│   └── rate_limiter.py     # API usage control
+├── logs/                  # Activity logs
+└── main.py               # Application entry point
 ```
 
-## Security
+## Security Notes
 
-- API keys are securely stored in `.env` file
-- API usage is controlled with rate limiting
-- Excessive usage is prevented with daily tweet limit
+- API credentials stored securely in environment variables
+- Automatic rate limiting to prevent API abuse
+- Configurable daily limits to control costs
+- Comprehensive error handling and logging
 
 ## License
 
-MIT 
+MIT License - feel free to modify and distribute.
